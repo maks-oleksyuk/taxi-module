@@ -1,0 +1,5 @@
+timer:
+  enable: false
+  mes_head: '🚕 Taxi on the way...'
+  mes_text: 'Your taxi will arrive through:'
+  position: 'bottom-left'

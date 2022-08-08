@@ -1,0 +1,4 @@
+taxi.settings_tab:
+  title: 'Settings'
+  route_name: taxi.settings
+  base_route: taxi.settings

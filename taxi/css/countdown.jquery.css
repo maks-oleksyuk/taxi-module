@@ -1,0 +1,28 @@
+#taxi-timer .animated {
+  display: flex;
+  flex: 0 0 20px;
+}
+
+#taxi-timer {
+  display: flex;
+  direction: ltr;
+  font-size: 30px;
+  padding-top: 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+#taxi-timer .animated#hours:before,
+.animated#minutes:before,
+.animated#seconds:before {
+  content: ':';
+}
+
+#taxi-timer .animated .wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#taxi-timer .animated .wrapper .label {
+  font-size: 10px;
+}

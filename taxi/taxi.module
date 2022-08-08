@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the Taxi module.
+ */
+
+use Drupal\Core\Mail\MailFormatHelper;
+
+/**
+ * Implements hook_mail().
+ */
+function taxi_mail($key, &$message, $test): void {
+  switch ($key) {
+    case 'ordered':
+      $body =
+        "Dear " . $test['name'] . ",
+
+        You Just Ordered " . $test['tariff'] . " Taxi " . $test['road'] . " Our Airport.
+        Your Taxi Will Wait You at  " . date('d.m.y H:i:s', $test['time']) . "
+        There Will Be Free Space for: " . $test['adults'] . " Adult(s) and " . $test['children'] . " Child(ren).
+        See Ya!
+          PS: With Love, Bahrain Airport Taxi Service";
+      $message['subject'] = "Taxi Request";
+      $message['body'][] = MailFormatHelper::htmlToText($body);
+      break;
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function taxi_page_attachments(array &$attachments): void {
+  $current_path = Drupal::service('path.current')->getPath();
+  if (!str_contains($current_path, '/admin')) {
+    $config = Drupal::config('taxi.settings')->get('timer');
+    $attachments['#attached']['library'][] = 'taxi/taxi_timer';
+    $attachments['#attached']['drupalSettings']['taxi_timer'] = $config;
+  }
+}

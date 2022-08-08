@@ -1,0 +1,5 @@
+taxi.settings:
+  title: 'Taxi Settings'
+  base_route_name: taxi.settings
+  names:
+    - taxi.settings

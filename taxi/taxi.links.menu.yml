@@ -1,0 +1,13 @@
+admin-page.structure:
+  title: 'Taxi Request List'
+  description: 'Administer Taxi Request List'
+  parent: system.admin_structure
+  route_name: taxi.admin-page
+  weight: 5
+
+admin.taxi.settings:
+  title: 'Taxi Settings'
+  description: 'Set configuration for taxi module'
+  parent: system.admin_config_ui
+  route_name: taxi.settings
+

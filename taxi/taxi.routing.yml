@@ -1,0 +1,31 @@
+taxi.admin-page:
+  path: '/admin/structure/taxi'
+  defaults:
+    _title: 'Administer Taxi Requests'
+    _form: '\Drupal\taxi\Form\TaxiList'
+  requirements:
+    _permission: 'administer site configuration'
+
+taxi.delete-admin:
+  path: '/admin/structure/taxilist/{id}/delete'
+  defaults:
+    _title: 'Delete Form for Admins'
+    _form: '\Drupal\taxi\Form\TaxiDeleteAdmin'
+  requirements:
+    _permission: 'administer site configuration'
+
+taxi.edit-admin:
+  path: '/admin/structure/taxilist/{id}/edit'
+  defaults:
+    _title: 'Edit Form for Admins'
+    _form: '\Drupal\taxi\Form\TaxiEditAdmin'
+  requirements:
+    _permission: 'administer site configuration'
+
+taxi.settings:
+  path: '/admin/config/user-interface/taxi'
+  defaults:
+    _title: 'Taxi Settings'
+    _form: '\Drupal\taxi\Form\TaxiSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

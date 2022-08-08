@@ -1,0 +1,25 @@
+taxi_library:
+  css:
+    base:
+      css/style.css: { }
+
+taxi_timer:
+  js:
+    js/jquery.toast.js: { }
+    js/countdown.jquery.min.js: { }
+    js/app.js: { }
+  css:
+    base:
+      css/jquery.toast.css: { }
+      css/countdown.jquery.css: { }
+  dependencies:
+    - core/jquery
+    - core/js-cookie
+#    - core/once
+#    - core/drupal
+#    - core/drupalSettings
+
+taxi:
+  dependencies:
+    - core/jquery
+    - core/ajax
